@@ -29,8 +29,18 @@ function openimg(e){
       return;
     }
 
-     basicLightbox.create(`<img src=${e.target.dataset.source} width="800" height="600">`) .show()
-    }
+    const mod = basicLightbox.create(`<img src=${e.target.dataset.source} width="800" height="600">`) 
+    mod.show()
+    window.addEventListener("keydown",e=>{
+      
+      if (e.code === "Escape"){
+        console.log(e.code);
+        mod.close();
+      }}) 
+   
+  }
+    
+
 
 
 
